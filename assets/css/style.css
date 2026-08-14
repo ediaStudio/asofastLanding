@@ -548,43 +548,6 @@ a {
   }
 }
 
-/* Pricing */
-.pricing-card {
-  max-width: 36rem;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2.5rem 2rem;
-}
-
-.pricing-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.6rem;
-}
-
-.pricing-card .price {
-  font-size: 3rem;
-  font-weight: 800;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 1rem 0;
-}
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.75rem;
-  color: var(--muted);
-}
-
-.pricing-card li {
-  padding: 0.35rem 0;
-}
-
 /* FAQ */
 .faq-list {
   display: grid;
