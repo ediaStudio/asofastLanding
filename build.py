@@ -362,6 +362,11 @@ def build() -> None:
     # .nojekyll: tell GitHub Pages to serve files verbatim (no Jekyll processing).
     (DIST_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
+    # llms.txt: machine-readable site description for AI crawlers.
+    llms_src = ROOT / "llms.txt"
+    if llms_src.exists():
+        shutil.copy2(llms_src, DIST_DIR / "llms.txt")
+
     # Summary.
     total_pages = sum(1 for _ in DIST_DIR.rglob("*.html"))
     total_assets = sum(1 for _ in DIST_DIR.rglob("*") if _.is_file() and _.suffix != ".html")

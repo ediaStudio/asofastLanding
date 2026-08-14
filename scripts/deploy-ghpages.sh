@@ -11,7 +11,7 @@ trap 'git worktree remove --force "$TMP" >/dev/null 2>&1 || true; rm -rf "$TMP"'
 if git rev-parse --verify gh-pages >/dev/null 2>&1; then
   git worktree add "$TMP" gh-pages
 else
-  git worktree add --orphan "$TMP" gh-pages
+  git worktree add --orphan -b gh-pages "$TMP"
 fi
 
 # Replace everything except the worktree metadata.
