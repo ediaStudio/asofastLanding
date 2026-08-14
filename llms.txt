@@ -1,0 +1,18 @@
+# AsoFast
+
+> AsoFast is an open source ASO (App Store Optimization) tool for mobile developers. It generates App Store and Google Play listings: titles, subtitles, descriptions, keywords, multilingual translations, and marketing screenshots. Self-hosted, MIT licensed, 100% free.
+
+## Vitrine / Landing
+
+- [Home](https://asofast.app/): Open source ASO tool for App Store & Google Play. Features, how it works, screenshots of the dashboard, FAQ, and calls to action pointing to the GitHub repository.
+- [Blog](https://asofast.app/blog/): Practical guides on ASO, app store keyword research, Google Play descriptions, App Store screenshots, localization, and getting started with App Store Optimization.
+
+## Produit
+
+- [Source code (GitHub)](https://github.com/ediaStudio/asofast): The AsoFast application itself, self-hosted, MIT license.
+- [Landing repo (GitHub)](https://github.com/ediaStudio/asofastLanding): Source of this static site.
+
+## Contact
+
+- Email: contact@asofast.app
+- Organization: ediaStudio (https://github.com/ediaStudio)

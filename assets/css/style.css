@@ -216,6 +216,20 @@ a {
   padding: 4rem 0 3rem;
 }
 
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 999px;
+}
+
 .hero-grid {
   display: grid;
   gap: 2.5rem;
