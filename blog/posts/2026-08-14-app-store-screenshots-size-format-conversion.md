@@ -1,0 +1,25 @@
+---
+title: App Store screenshots size, format, and conversion tips
+description: A developer-friendly overview of App Store screenshot sizes, accepted formats, and how to convert your designs without losing quality or time.
+date: 2026-08-14
+tags: app store, screenshots, design, ios
+slug: app-store-screenshots-size-format-conversion
+---
+
+App Store screenshots are not just marketing images. They are the first interactive preview a user sees, and they have a direct effect on conversion. Apple requires specific sizes and formats depending on the device. If you get those wrong, App Store Connect will reject the upload and you will lose time fixing it.
+
+Apple accepts screenshots for iPhone, iPad, Mac, and Apple Watch. The most common sizes for iPhone are the 6.7 inch display, the 6.5 inch display, the 5.5 inch display, and the 5.4 inch display. For iPad, the two main sets are the 12.9 inch iPad Pro second generation and the 12.9 inch iPad Pro sixth generation. Each set has its own required pixel dimensions. You can find the exact numbers in App Store Connect, but as a rule your portrait screenshots should be one of the standard widths like 1290, 1284, 1242, 1179, 1170, or 1080 pixels, depending on the device.
+
+The format must be JPEG or PNG. PNG is best when your screenshots contain text, sharp edges, or transparent areas. JPEG is smaller and works well for photographs and gradients. Apple does not accept WebP, HEIC, or PDF for screenshots. The maximum file size is usually around five hundred kilobytes per screenshot, though App Store Connect sometimes allows larger files. Keeping files small improves upload speed and avoids processing errors.
+
+Color space matters more than most people think. App Store Connect expects sRGB. If you export from a design tool in a different color profile, your screenshots might look washed out or oversaturated on the store. Before exporting, set your document color profile to sRGB and embed the profile in the exported file. This is especially important if you are using tools like Figma, Sketch, or Photoshop.
+
+The easiest way to handle conversion is to design once at the highest resolution, then scale down. Design your screenshots at 1320 by 2868 pixels for the 6.7 inch iPhone, then generate the smaller iPhone sizes from that master. For iPad, start at 2048 by 2732 pixels. This approach keeps everything crisp, because you are downsampling instead of upsampling. Just make sure text stays readable when the image is scaled down.
+
+When you need to convert between formats, command line tools are fast and repeatable. ImageMagick is the standard choice. A command like `convert input.png -resize 1170x2532 -sampling-factor 4:2:0 -quality 92 output.jpg` will produce a properly sized JPEG. For PNG optimization, `pngquant` can reduce file size without visible quality loss. These tools fit well into a build script, which is useful if you update screenshots often.
+
+If command line tools are not your preference, AsoFast includes a screenshot generator that frames your raw captures in the correct device sizes. You upload your source images, choose the devices you want to support, and it exports the full set of PNGs ready for App Store Connect. It handles the dimensions and aspect ratios for you, so you do not have to look them up every time Apple updates the requirements.
+
+A few practical tips will save you headaches later. Always keep your source files in a separate folder, because you will need to regenerate screenshots after every redesign. Use readable typography. Do not put important text at the very top or bottom where it might get cropped by device bezels in the store preview. Test your screenshots on both light and dark mode if your design uses a transparent background.
+
+Screenshots are one of the highest leverage assets on your listing. Get the technical details right once, then focus on the message. AsoFast helps you spend less time resizing and more time testing which screenshot order actually converts.

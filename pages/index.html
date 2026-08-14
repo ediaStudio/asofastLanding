@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AsoFast: Open source ASO tool for App Store & Google Play</title>
+  <meta name="description" content="AsoFast helps developers generate App Store and Google Play metadata, translations, keywords, and screenshot templates from a local dashboard.">
+  <link rel="canonical" href="{{SITE_URL}}">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <meta property="og:title" content="AsoFast: Open source ASO tool for App Store & Google Play">
+  <meta property="og:description" content="Generate listings, translations, keywords, and screenshot templates locally. Self-hosted and MIT licensed.">
+  <meta property="og:url" content="{{SITE_URL}}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{SITE_URL}}/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AsoFast: Open source ASO tool for App Store & Google Play">
+  <meta name="twitter:description" content="Generate listings, translations, keywords, and screenshot templates locally. Self-hosted and MIT licensed.">
+  <meta name="twitter:image" content="{{SITE_URL}}/assets/og-image.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AsoFast",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "url": "{{SITE_URL}}",
+    "sourceOrganization": {
+      "@type": "Organization",
+      "name": "ediaStudio"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AsoFast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AsoFast is a self-hosted, open source tool for App Store and Google Play listing optimization. It generates metadata, translations, keywords, and screenshot templates from a local dashboard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AsoFast really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AsoFast is released under the MIT license. There are no usage limits, subscriptions, or credit cards required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to share my App Store credentials?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. AsoFast runs locally on your machine. Your App Store Connect and Google Play Console credentials stay with you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which stores are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AsoFast supports both Apple App Store and Google Play Store listings, including metadata fields, screenshots, and localization workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use my own AI API key?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bring your own API key so you control costs, model choice, and data privacy. No inference runs through our servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the screenshot generator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your raw screenshots and the generator frames them for iPhone, iPad, Android phones, and Android tablets in the sizes each store requires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I report a bug or request a feature?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open an issue on the AsoFast GitHub repository at {{REPO_URL}}."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="AsoFast home">
+        <img src="/assets/logo.svg" alt="" width="32" height="32">
+        AsoFast
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="{{REPO_URL}}" class="btn btn-primary" target="_blank" rel="noopener">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Stop guessing your <span class="accent">app store keywords</span></h1>
+          <p>AsoFast generates titles, descriptions, keywords, translations, and screenshot templates for your iOS and Android apps. Run it locally. Own your data. Publish faster.</p>
+          <div class="hero-actions">
+            <a href="{{REPO_URL}}" class="btn btn-primary" target="_blank" rel="noopener">Get started on GitHub</a>
+            <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/assets/screenshots/appstore_listing.png" alt="AsoFast dashboard showing an App Store listing editor" width="2112" height="800" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Product capabilities">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>One dashboard</strong> for App Store Connect and Google Play Console</div>
+        <div class="proof-item"><strong>Generate listings</strong> in 10+ languages</div>
+        <div class="proof-item"><strong>Track keywords, competitors,</strong> and conversion metrics</div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Everything you need to ship a better listing</h2>
+        <p class="section-lead">AsoFast bundles the repetitive parts of app store optimization into one focused tool: content generation, localization, screenshot framing, and submission prep.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">AI</div>
+            <h3>AI-generated metadata</h3>
+            <p>Titles, subtitles, keywords, and descriptions tuned for each store's character limits and ranking signals.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"> globe </div>
+            <h3>Multilingual listings</h3>
+            <p>Translate and adapt your listing without juggling spreadsheets. Keep every locale in sync from one place.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">IMG</div>
+            <h3>Marketing screenshots</h3>
+            <p>Generate device frames and screenshot sets from your designs, sized for iPhone, iPad, and Android devices.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">CHK</div>
+            <h3>Submission checklist</h3>
+            <p>Prepare App Store Connect and Google Play submissions in one place so nothing gets missed at launch.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">KEY</div>
+            <h3>Keyword tracking</h3>
+            <p>Monitor rankings and spot what your competitors rank for so you can refine your metadata over time.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">KPI</div>
+            <h3>Conversion analytics</h3>
+            <p>See which listing variants drive the most downloads and iterate based on real store data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section" style="background: rgba(17,24,39,0.5);">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-lead">AsoFast fits into the workflow you already use. No new accounts, no external dashboards, no data leaving your machine.</p>
+        <div class="steps">
+          <div class="step">
+            <h3>Connect your app</h3>
+            <p>Point AsoFast to your App Store or Google Play listing, or start from scratch with your app name and category.</p>
+          </div>
+          <div class="step">
+            <h3>Generate content</h3>
+            <p>Draft metadata, translations, and screenshot layouts with your own API key and brand voice.</p>
+          </div>
+          <div class="step">
+            <h3>Review and refine</h3>
+            <p>Edit in a focused interface built for developers. Preview how each field looks before you publish.</p>
+          </div>
+          <div class="step">
+            <h3>Publish</h3>
+            <p>Export ready-to-submit assets and push them to the stores, or share the output with your team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Built for indie developers and product teams</h2>
+        <p class="section-lead">AsoFast is designed to remove the friction between a good app and a store listing that actually explains it.</p>
+        <div class="benefit-list">
+          <div class="benefit">
+            <div class="benefit-marker">1</div>
+            <div>
+              <h3>Ship localized listings in hours, not days</h3>
+              <p>Generate first drafts for every target market, then review and ship them without waiting on agencies.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-marker">2</div>
+            <div>
+              <h3>Cut ASO agency costs</h3>
+              <p>Own the full optimization loop in-house. Pay only for the API usage you choose, with no platform fees.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-marker">3</div>
+            <div>
+              <h3>Own your workflow with a self-hosted, MIT-licensed tool</h3>
+              <p>Fork it, extend it, run it on your own infrastructure. The code is yours to adapt.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-marker">4</div>
+            <div>
+              <h3>Keep sensitive app data on your machine</h3>
+              <p>Your listing data, analytics, and credentials never pass through our servers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery" style="background: rgba(17,24,39,0.5);">
+      <div class="container">
+        <h2 class="section-title">Inside the dashboard</h2>
+        <p class="section-lead">A focused interface for every part of your listing workflow, from metadata to screenshots to submission.</p>
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/appstore_listing.png" alt="App Store listing editor" width="2112" height="800" loading="lazy">
+            <figcaption class="gallery-caption">App Store listing</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/playstore_listing.png" alt="Google Play listing editor" width="1846" height="1024" loading="lazy">
+            <figcaption class="gallery-caption">Google Play listing</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/phone_screenshots.png" alt="Phone screenshot generator" width="1846" height="940" loading="lazy">
+            <figcaption class="gallery-caption">Phone screenshots</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/tablet_screenshots.png" alt="Tablet screenshot generator" width="1836" height="944" loading="lazy">
+            <figcaption class="gallery-caption">Tablet screenshots</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/ipad_screenshots.png" alt="iPad screenshot generator" width="1802" height="666" loading="lazy">
+            <figcaption class="gallery-caption">iPad screenshots</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/prepare_submission.png" alt="Prepare submission checklist" width="490" height="124" loading="lazy">
+            <figcaption class="gallery-caption">Prepare submission</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/add_for_review.png" alt="Add for review button state" width="442" height="82" loading="lazy">
+            <figcaption class="gallery-caption">Add for review</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/conversion_rate.png" alt="Conversion rate metrics" width="1714" height="332" loading="lazy">
+            <figcaption class="gallery-caption">Conversion rate</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/playstore_languages.png" alt="Google Play language localizations" width="1194" height="1144" loading="lazy">
+            <figcaption class="gallery-caption">Play Store languages</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/screenshots/iphone_screenshots.png" alt="iPhone screenshot generator" width="1456" height="668" loading="lazy">
+            <figcaption class="gallery-caption">iPhone screenshots</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="pricing-card">
+          <h3>Free and open source</h3>
+          <div class="price">$0</div>
+          <ul>
+            <li>Self-hosted, MIT license</li>
+            <li>No usage limits, no credit card</li>
+            <li>Use your own AI API key</li>
+            <li>All features included</li>
+          </ul>
+          <a href="{{REPO_URL}}" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>What is AsoFast?</summary>
+            <p>AsoFast is a self-hosted, open source tool for App Store and Google Play listing optimization. It generates metadata, translations, keywords, and screenshot templates from a local dashboard.</p>
+          </details>
+          <details>
+            <summary>Is AsoFast really free?</summary>
+            <p>Yes. AsoFast is released under the MIT license. There are no usage limits, subscriptions, or credit cards required.</p>
+          </details>
+          <details>
+            <summary>Do I need to share my App Store credentials?</summary>
+            <p>No. AsoFast runs locally on your machine. Your App Store Connect and Google Play Console credentials stay with you.</p>
+          </details>
+          <details>
+            <summary>Which stores are supported?</summary>
+            <p>AsoFast supports both Apple App Store and Google Play Store listings, including metadata fields, screenshots, and localization workflows.</p>
+          </details>
+          <details>
+            <summary>Can I use my own AI API key?</summary>
+            <p>Yes. Bring your own API key so you control costs, model choice, and data privacy. No inference runs through our servers.</p>
+          </details>
+          <details>
+            <summary>How does the screenshot generator work?</summary>
+            <p>Upload your raw screenshots and the generator frames them for iPhone, iPad, Android phones, and Android tablets in the sizes each store requires.</p>
+          </details>
+          <details>
+            <summary>Where can I report a bug or request a feature?</summary>
+            <p>Open an issue on the AsoFast GitHub repository at <a href="{{REPO_URL}}" target="_blank" rel="noopener">{{REPO_URL}}</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <h2>Start shipping better listings today</h2>
+        <p>Clone the repo, add your API key, and generate your first optimized listing in minutes.</p>
+        <a href="{{REPO_URL}}" class="btn btn-primary" target="_blank" rel="noopener">Try AsoFast on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a href="/" class="logo">
+        <img src="/assets/logo.svg" alt="" width="32" height="32">
+        AsoFast
+      </a>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="{{REPO_URL}}" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <div class="footer-meta">
+        <p>&copy; {{YEAR}} AsoFast. Contact: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
