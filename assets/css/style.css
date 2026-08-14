@@ -153,6 +153,12 @@ a {
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.36);
 }
 
+/* .nav-links a (0,1,1) would otherwise override .btn-primary's text color (0,1,0). */
+.nav-links .btn-primary,
+.nav-links .btn-primary:hover {
+  color: #020617;
+}
+
 .btn-secondary {
   background: transparent;
   color: var(--text);
