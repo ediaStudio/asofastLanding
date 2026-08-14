@@ -49,7 +49,7 @@ Write your article body here using Markdown.
 ```
 
 2. Run `python3 build.py`.
-3. Commit the new file and the updated `dist/` folder if your deployment pipeline requires it.
+3. Deploy (see below).
 
 ## Serve locally
 
@@ -61,14 +61,25 @@ Then open http://localhost:8000 in your browser.
 
 ## Deploy
 
-Deployment is handled by GitHub Actions (`.github/workflows/deploy.yml`). On every push to `main`, the workflow:
+The site is served from the `gh-pages` branch of this repository. To build and
+publish in one step:
 
-1. Checks out the repository.
-2. Runs `python3 build.py`.
-3. Uploads the `dist/` folder as a Pages artifact.
-4. Deploys the artifact to GitHub Pages.
+```bash
+./scripts/deploy-ghpages.sh
+```
 
-The custom domain `asofast.app` is configured via the `CNAME` file.
+The script runs `python3 build.py`, replaces the `gh-pages` branch content with
+`dist/`, and force-pushes it. If a `GITHUB_TOKEN` is available in the Hermes
+profile environment file it is used for the push; otherwise your normal git
+credentials are used.
+
+The custom domain `asofast.app` is configured via the `CNAME` file (GitHub
+Pages picks it up automatically on the `gh-pages` branch).
+
+> Note: `.github/workflows/deploy.yml` (GitHub Actions deployment) is kept in
+> the repo for later use but is currently not committed, because the current
+> GitHub token lacks the `workflow` scope. Once the token has that scope, add
+> the file back and switch Pages to "Deploy from a branch: GitHub Actions".
 
 ## License
 

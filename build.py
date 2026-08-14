@@ -359,6 +359,9 @@ def build() -> None:
     # CNAME.
     (DIST_DIR / "CNAME").write_text("asofast.app", encoding="utf-8")
 
+    # .nojekyll: tell GitHub Pages to serve files verbatim (no Jekyll processing).
+    (DIST_DIR / ".nojekyll").write_text("", encoding="utf-8")
+
     # Summary.
     total_pages = sum(1 for _ in DIST_DIR.rglob("*.html"))
     total_assets = sum(1 for _ in DIST_DIR.rglob("*") if _.is_file() and _.suffix != ".html")
