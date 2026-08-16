@@ -27,8 +27,19 @@ fi
 git -C "$TMP" -c user.name="ediaStudio" -c user.email="ediaStudio@users.noreply.github.com" \
   commit -q -m "Deploy site"
 
-ENVF="${HERMES_HOME:-$HOME/.hermes}/profiles/asofast/.env"
-if [ -f "$ENVF" ] && GH=$(grep '^GITHUB_TOKEN=' "$ENVF" | head -1 | cut -d= -f2 | tr -d '\n\r') && [ -n "$GH" ]; then
+# HERMES_HOME may point to the profile dir itself (cron context) or to ~/.hermes.
+# Try every plausible location of the profile env file before falling back to a plain push.
+GH=""
+for ENVF in \
+  "${HERMES_HOME:-$HOME/.hermes}/profiles/asofast/.env" \
+  "${HERMES_HOME:-$HOME/.hermes}/.env" \
+  "$HOME/.hermes/profiles/asofast/.env" \
+  "/root/.hermes/profiles/asofast/.env"; do
+  if [ -f "$ENVF" ] && GH=$(grep '^GITHUB_TOKEN=' "$ENVF" | head -1 | cut -d= -f2 | tr -d '\n\r') && [ -n "$GH" ]; then
+    break
+  fi
+done
+if [ -n "$GH" ]; then
   B64=$(printf "x-access-token:%s" "$GH" | base64 -w0)
   git -C "$TMP" -c http.extraheader="AUTHORIZATION: basic $B64" push -f origin gh-pages
 else
