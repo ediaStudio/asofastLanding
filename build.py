@@ -233,15 +233,52 @@ def build_json_ld(post: dict) -> str:
     data = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": f"{SITE_URL}/blog/{post['slug']}/"},
         "headline": post["title"],
         "description": post["description"],
+        "image": f"{SITE_URL}/assets/og-image.png",
         "datePublished": post["date"],
         "dateModified": post["date"],
-        "author": {"@type": "Organization", "name": "AsoFast"},
-        "publisher": {"@type": "Organization", "name": "AsoFast"},
+        "inLanguage": "en",
+        "author": {"@type": "Organization", "name": "AsoFast", "url": SITE_URL},
+        "publisher": {"@type": "Organization", "name": "AsoFast", "url": SITE_URL},
         "url": f"{SITE_URL}/blog/{post['slug']}/",
     }
     return f'<script type="application/ld+json">\n{json.dumps(data, indent=2)}\n</script>'
+
+
+def related_posts(post: dict, posts: list[dict], n: int = 3) -> list[dict]:
+    """Pick the n most related posts: shared tags first, then most recent."""
+    def score(other: dict) -> int:
+        return len(set(post["tags"]) & set(other["tags"]))
+
+    candidates = [p for p in posts if p["slug"] != post["slug"]]
+    candidates.sort(key=lambda p: (score(p), p["date"]), reverse=True)
+    return candidates[:n]
+
+
+def build_related_html(related: list[dict]) -> str:
+    if not related:
+        return ""
+    items = "".join(
+        '    <li><a href="/blog/{slug}/">'
+        '<span class="related-title">{title}</span>'
+        '<span class="related-date"><time datetime="{date}">{date}</time></span>'
+        "</a></li>".format(
+            slug=p["slug"],
+            title=html.escape(p["title"]),
+            date=p["date"],
+        )
+        for p in related
+    )
+    return (
+        '<nav class="related-posts" aria-label="Related posts">\n'
+        "  <h2>Related posts</h2>\n"
+        "  <ul>\n"
+        f"{items}\n"
+        "  </ul>\n"
+        "</nav>"
+    )
 
 
 def load_posts() -> list[dict]:
@@ -316,6 +353,7 @@ def build() -> None:
             "SLUG": post["slug"],
             "CONTENT": post["content_html"],
             "JSON_LD": build_json_ld(post),
+            "RELATED_POSTS": build_related_html(related_posts(post, posts)),
         }
         post_html = apply_vars(post_template, post_vars)
         post_dir = DIST_DIR / "blog" / post["slug"]

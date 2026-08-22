@@ -50,8 +50,9 @@
         <div class="content">
           {{CONTENT}}
         </div>
-        <a href="/blog/" class="back-link">&larr; Back to the blog</a>
       </article>
+      {{RELATED_POSTS}}
+      <a href="/blog/" class="back-link">&larr; Back to the blog</a>
     </div>
   </main>
 
