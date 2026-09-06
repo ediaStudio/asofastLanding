@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Store vs Google Play: how your metadata really works on each store - AsoFast</title>
+  <meta name="description" content="App Store vs Google Play compared field by field: title, subtitle, keywords, description, character limits, indexing rules and localization. What solo developers get wrong and how to write once for both stores.">
+  <link rel="canonical" href="https://asofast.app/blog/app-store-vs-google-play-metadata/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <meta property="og:title" content="App Store vs Google Play: how your metadata really works on each store - AsoFast">
+  <meta property="og:description" content="App Store vs Google Play compared field by field: title, subtitle, keywords, description, character limits, indexing rules and localization. What solo developers get wrong and how to write once for both stores.">
+  <meta property="og:url" content="https://asofast.app/blog/app-store-vs-google-play-metadata/">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-09-06">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://asofast.app/blog/app-store-vs-google-play-metadata/"
+  },
+  "headline": "App Store vs Google Play: how your metadata really works on each store",
+  "description": "App Store vs Google Play compared field by field: title, subtitle, keywords, description, character limits, indexing rules and localization. What solo developers get wrong and how to write once for both stores.",
+  "image": "https://asofast.app/assets/og-image.png",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "AsoFast",
+    "url": "https://asofast.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AsoFast",
+    "url": "https://asofast.app"
+  },
+  "url": "https://asofast.app/blog/app-store-vs-google-play-metadata/"
+}
+</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2e085f1ce62f4197ba56aee2c20412a3"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="AsoFast home">
+        <img src="/assets/logo.svg" alt="" width="32" height="32">
+        AsoFast
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#how-it-works">How it works</a>
+        
+        <a href="/blog/">Blog</a>
+        <a href="https://github.com/ediaStudio/asofast" class="btn btn-primary" target="_blank" rel="noopener">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="blog-post">
+    <div class="container">
+      <article>
+        <header>
+          <h1>App Store vs Google Play: how your metadata really works on each store</h1>
+          <p class="meta">Published on <time datetime="2026-09-06">2026-09-06</time></p>
+        </header>
+        <div class="content">
+          <p>When I shipped my first app, I wrote one description in English, pasted it into App Store Connect and into the Play Console, and assumed I was done. Two stores, same app, same text. What could go wrong?</p>
+<p>Everything. A month later the app was indexed for almost nothing on Google Play, and on iOS I was wasting half my keyword space without knowing it. The two stores look similar from the outside, but they read your metadata in completely different ways. Here is the comparison I wish I had read before launching.</p>
+<h2>The 30 characters both stores give you</h2>
+<p>Both the App Store and Google Play cap the app title at 30 characters. That is where the similarities end.</p>
+<p>On iOS, the title is the strongest ranking field you control. Keywords in the title carry more weight than anywhere else, so a title like &quot;RunTrack: GPS Run Tracker&quot; beats &quot;RunTrack&quot; for discovery.</p>
+<p>On Google Play, the title also matters a lot, but Google applies stricter policy rules: no keyword stuffing, no superlatives like &quot;best&quot; or &quot;#1&quot; used purely for promotion, no store ranking claims. Developers have had apps rejected for titles that would be fine on iOS. The safe play on Android is a brand name plus one clear functional keyword, not three.</p>
+<h2>The subtitle trap</h2>
+<p>iOS gives you a 30-character subtitle, shown under the title in search results and indexed for keywords. It is a second title in disguise, and most indie developers waste it on marketing fluff like &quot;your companion for life&quot;.</p>
+<p>Google Play has no subtitle field at all. The rough equivalent is the short description, 80 characters maximum, shown on your listing page. It works differently: Google reads it as the start of your app description, and it heavily influences conversion because it is often the only text a user reads before deciding. On iOS your subtitle ranks you. On Android your short description convinces people who already found you.</p>
+<h2>Where keyword targeting actually happens</h2>
+<p>This is the biggest structural difference.</p>
+<p>iOS has a hidden keywords field: 100 characters, comma separated, invisible to users but fully indexed by Apple. This is where long-tail keyword research pays off. You do not need to repeat words already in your title or subtitle (Apple combines them automatically), do not use plural forms if you have the singular, and do not waste characters on spaces after commas.</p>
+<p>Google Play has no keywords field. None. Google indexes your app from your title, short description and full description, the same way it indexes web pages. That is why repeating your main keywords naturally a few times inside the full description matters on Android, while the same repetition on iOS does nothing because the description is barely indexed.</p>
+<h2>The description: read on Android, ignored on iOS</h2>
+<p>This one cost me real traffic.</p>
+<p>The App Store indexes the title, subtitle and keywords field. The promotional text and the long description have almost no effect on search ranking. The description is a conversion tool: it convinces people who already landed on your page. Write it for humans, front-load the first two lines (everything after that hides behind &quot;more&quot;), and do not expect any SEO benefit.</p>
+<p>Google Play reads the full description and uses it for ranking. Keyword research that looks optional on iOS is mandatory on Android. The practical rule many ASO specialists use: your main keyword should appear in the title, once in the short description, and a few times, naturally, inside the 4,000-character description. Stuffing it twenty times gets you flagged; mentioning it once gets you nowhere.</p>
+<h2>Localization: the multiplier almost everyone skips</h2>
+<p>Here is where both stores agree, and where most indie apps throw away the easiest traffic available.</p>
+<p>Both stores let you create fully localized listings: title, subtitle or short description, description, keywords on iOS, and localized screenshots. The vast majority of listings on both stores exist in English US only. Meanwhile, a large share of downloads worldwide comes from users searching in their own language, and some markets (Japan, Korea, Germany, Brazil) convert at high rates with far less keyword competition than English.</p>
+<p>Only ranking for English US means you are invisible for most of the planet&#x27;s searches. And think about your niche geographically: a football stats app has no reason to fight for positions in countries where football is a minor sport, when Spain, Brazil or Indonesia would convert far better per impression. Localized metadata is how you claim those searches without paying a cent for ads.</p>
+<p>The catch is volume. Localizing a full listing properly into 10 or 20 languages by hand means rewriting the title, subtitle, description, keyword set and screenshots for every language. Nobody does this consistently with a spreadsheet. It is exactly the kind of repetitive, mechanical work that kills indie projects.</p>
+<h2>What this means in practice, field by field</h2>
+<p>Title (30 chars): brand plus one keyword on iOS, brand plus one safe keyword on Android.</p>
+<p>Subtitle (iOS only, 30 chars): one more keyword phrase, not a slogan.</p>
+<p>Keywords (iOS only, 100 chars): your long-tail strategy, no repeats, no spaces after commas.</p>
+<p>Short description (Android only, 80 chars): your main keyword plus a conversion hook.</p>
+<p>Full description: conversion copy on iOS, ranking text on Android.</p>
+<p>Localization: the single highest-leverage move on both stores, and the one nobody has time to do by hand.</p>
+<h2>Verdict</h2>
+<p>Stop treating the two stores as one. Write your iOS metadata with the subtitle and keywords field as the ranking core and the description as pure sales copy. Write your Android metadata with the description as a real ranking document. Then localize both, because an unlocalized listing leaves most of the world&#x27;s searches to your competitors.</p>
+<p>Doing all of this by hand for every language is why people either skip localization or burn a weekend per language. It is also why I built AsoFast: it generates the title, subtitle, description and keyword set for each store with AI, translates everything into 80+ languages, and publishes straight to App Store Connect and the Play Console. It runs 100% locally on your machine, your store credentials never leave your computer, it is open source under the MIT license, and it is free. If you are tired of paying AppTweak $79 a month or ASODesk $29.99 just to write metadata, grab it here: https://github.com/ediaStudio/asofast</p>
+        </div>
+      </article>
+      <nav class="related-posts" aria-label="Related posts">
+  <h2>Related posts</h2>
+  <ul>
+    <li><a href="/blog/before-you-launch-app-store-checklist/"><span class="related-title">Before you launch: an App Store checklist for solo developers</span><span class="related-date"><time datetime="2026-08-27">2026-08-27</time></span></a></li>    <li><a href="/blog/app-store-keyword-field-100-characters/"><span class="related-title">The App Store keyword field: 100 characters that decide your rank</span><span class="related-date"><time datetime="2026-08-16">2026-08-16</time></span></a></li>    <li><a href="/blog/best-aso-tools-indie-developers/"><span class="related-title">7 best ASO tools for indie developers in 2026 (and what they really cost)</span><span class="related-date"><time datetime="2026-08-15">2026-08-15</time></span></a></li>
+  </ul>
+</nav>
+      <a href="/blog/" class="back-link">&larr; Back to the blog</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a href="/" class="logo">
+        <img src="/assets/logo.svg" alt="" width="32" height="32">
+        AsoFast
+      </a>
+      <ul class="footer-links">
+        <li><a href="/#features">Features</a></li>
+        <li></li>
+
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="https://github.com/ediaStudio/asofast" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <div class="footer-meta">
+        <p>&copy; 2026 AsoFast. Contact: <a href="mailto:contact@asofast.app">contact@asofast.app</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
